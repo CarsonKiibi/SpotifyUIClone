@@ -15,6 +15,11 @@ body {
     flex-direction: column;
 }
 
+b {
+    padding:0;
+    margin: 0;
+}
+
 h1 {
     padding: 0px;
     font-size: 15px !important;
@@ -48,6 +53,7 @@ h1 {
     background-color: #000000ff;
     color: white;
     flex-grow: 1;
+    max-height: calc(100vh - 133px);
     flex-direction: row;
     
 }
@@ -101,8 +107,7 @@ h1 {
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 8px;
 }
 
 .left-top {
@@ -127,11 +132,12 @@ h1 {
 .main-content {
     background: linear-gradient(#1d0f44ff, #121212ff 300px);
     color: white;
-    max-height: 500px;
     height: 100%;
-    flex-grow: 1;
+    /* used to have flex grow */
     overflow-y: auto;
     border-radius: 8px;
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
 .main-content-header {
@@ -140,29 +146,80 @@ h1 {
 }
 
 .song-content-right {
-    /*background-color: darkgreen; */
     background-color: #121212ff;
     color: white;
-    width: 300px;
+    min-width: 290px;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     padding-left: 5px;
     padding-right: 5px;
+    margin-right: 8px;
     border-radius: 8px;
+    overflow-y: overlay;
+    overflow-x: hidden;
 }
 
+/* Contains Liked Songs and exit (X)*/
 .song-content-header {
     height: 30px;
-    /*background-color: red; */
-    margin-bottom: auto;
     margin-right: auto;
     display: flex;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+    align-items: center;
+    padding-top: 180px; /* fix tomorrow alongside adding main content lmao */
 }
 
+/* Like Songs */
 .song-right-text {
-    font-size: 15px;
+    font-size: 13px;
     margin-right: auto;
+}
+
+/* Content under large album cover (contains song
+name, heart icon, 3 dots icon */
+.song-info-panel-right {
+    display: flex;
+    margin-right: auto;
+    align-items: center;
+    margin-top: 12px;
+    line-height: 25px;
+}
+
+/* Song, artist name (next to heart and 3 dots)*/
+.song-name-artist-right {
+    font-size: 15px;
+    text-align: left;
+    margin-right: auto;
+    margin-left: 10px;
+}
+
+.about-artist-container {
+    margin-left:0px; 
+    margin-right: 0px;
+    background-color: #242424ff;
+    width: 250px;
+    height: 500px;
+    border-radius: 8px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.about-overlay {
+    position: absolute;
+    font-weight: bold;
+    top: 10px;
+    left: 13px;
+    font-size: 12px;
+}
+
+.about-artist-text {
+    padding: 15px;
+    text-align: left;
+    line-height: 25px;
 }
 
 .small-img {
@@ -181,6 +238,37 @@ h1 {
 
 .bottom-icon {
     text-align: center;
+}
+
+.song-name-large {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.artist-name-large {
+    color: lightgray;
+    font-size: 15px;
+}
+
+.song-name-medium {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.artist-name-medium {
+    color: lightgray;
+    font-size: 10px;
+}
+
+.follow-button {
+    background: none;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    padding: 0px 10px;;
+    margin-left: 11px !important;
 }
 
 .material-icons {
@@ -229,6 +317,7 @@ h1 {
 
 ::-webkit-scrollbar {
     background: transparent;
+    width: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
